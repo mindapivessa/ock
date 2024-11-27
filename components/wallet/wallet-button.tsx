@@ -8,7 +8,7 @@ interface WalletButtonProps {
 export function WalletButton({ onClick }: WalletButtonProps) {
   return (
     <button 
-      className="flex items-center space-x-2 py-3 px-4 rounded-xl border border-gray-200 bg-white hover:bg-gray-50 transition-colors" 
+      className="flex items-center space-x-2 py-3 px-4 rounded-xl border border-zinc-200 dark:border-zinc-800 bg-white dark:bg-zinc-950 hover:bg-zinc-50 dark:hover:bg-zinc-800 transition-colors" 
       onClick={onClick}
     >
       <div className="h-6 w-6 rounded-full overflow-hidden">

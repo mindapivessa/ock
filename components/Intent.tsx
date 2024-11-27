@@ -1,8 +1,9 @@
 'use client'
 
 import { useState } from 'react'
-import { ArrowUp, StopCircle } from 'lucide-react'
+import { ArrowUp } from 'lucide-react'
 import { cn } from "@/lib/utils"
+import { Spinner } from '@/components/spinner'
 
 const promptTemplates = [
   "Bridge a token",
@@ -51,8 +52,8 @@ export function Intent() {
           value={input}
           onChange={handleInputChange}
           className={cn(
-            "w-full px-4 py-2 pb-10 border border-gray-300 rounded-xl focus:outline-none focus:ring-2 focus:ring-gray-200 pr-10 h-24 resize-none transition-all duration-300 ease-in-out",
-            isPrefilling && "bg-gray-100"
+            "w-full px-4 py-2 pb-10 border border-zinc-300 dark:border-zinc-700 rounded-xl focus:outline-none focus:ring-2 focus:ring-zinc-200 dark:focus:ring-zinc-700 pr-10 h-24 resize-none transition-all duration-300 ease-in-out dark:bg-zinc-950 dark:text-white",
+            isPrefilling && "bg-zinc-100 dark:bg-zinc-800"
           )}
           disabled={isProcessing}
         />
@@ -60,17 +61,14 @@ export function Intent() {
           <button
             type="submit"
             className={cn(
-              "absolute right-1.5 bottom-3 flex items-center justify-center bg-black text-white rounded-lg transition-all duration-300 ease-in-out",
-              isProcessing ? "w-[70px] px-2 py-1" : "w-[32px] h-[32px]"
+              "absolute right-1.5 bottom-3 flex items-center justify-center bg-zinc-950 text-white rounded-lg w-[32px] h-[32px] transition-all duration-300 ease-in-out",
+              isProcessing && "opacity-80"
             )}
           >
             {isProcessing ? (
-              <>
-                <StopCircle className="h-4 w-4 mr-2 transition-opacity duration-300 ease-in-out" />
-                <span className="transition-opacity duration-300 ease-in-out font-medium">Stop</span>
-              </>
+              <Spinner className="h-4 w-4" />
             ) : (
-              <ArrowUp className="h-4 w-4 transition-opacity duration-300 ease-in-out" />
+              <ArrowUp className="h-4 w-4" />
             )}
           </button>
         )}
@@ -81,7 +79,7 @@ export function Intent() {
             <button
               key={index}
               onClick={() => handleTemplateClick(template)}
-              className="px-3 py-1 border border-gray-300 rounded-xl bg-white hover:bg-gray-100 focus:outline-none transition-colors duration-200 ease-in-out flex-shrink-0 disabled:opacity-50 disabled:cursor-not-allowed text-sm font-medium"
+              className="px-3 py-1 border border-zinc-300 dark:border-zinc-700 rounded-xl bg-white dark:bg-zinc-950 hover:bg-zinc-100 dark:hover:bg-zinc-800 focus:outline-none transition-colors duration-200 ease-in-out flex-shrink-0 disabled:opacity-50 disabled:cursor-not-allowed text-sm font-semibold dark:text-white"
               disabled={isProcessing}
             >
               {template}

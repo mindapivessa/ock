@@ -18,31 +18,31 @@ const buttonVariants = {
 export function WalletActions() {
   return (
     <motion.div 
-      className="grid grid-cols-3 gap-4"
+      className="grid grid-cols-3 gap-2"
       variants={{ 
         visible: { transition: { staggerChildren: 0.05 } }
       }}
     >
       <motion.button 
         variants={buttonVariants}
-        className="flex flex-col items-center justify-center pb-2 pt-3 px-4 bg-gray-50 rounded-xl hover:bg-gray-100 transition-colors"
+        className="flex flex-col items-center justify-center pb-2 pt-3 px-4 bg-zinc-50 dark:bg-zinc-900 rounded-xl hover:bg-zinc-100 dark:hover:bg-zinc-800 transition-colors dark:text-white"
       >
         <Plus className="h-4 w-4 mb-1" />
-        <span className="font-medium text-base">Buy</span>
+        <span className="font-semibold text-base">Buy</span>
       </motion.button>
       <motion.button 
         variants={buttonVariants}
-        className="flex flex-col items-center justify-center px-4 pb-2 pt-3 bg-gray-50 rounded-xl hover:bg-gray-100 transition-colors"
+        className="flex flex-col items-center justify-center px-4 pb-2 pt-3 bg-zinc-50 dark:bg-zinc-900 rounded-xl hover:bg-zinc-100 dark:hover:bg-zinc-800 transition-colors dark:text-white"
       >
         <Send className="h-4 w-4 mb-1" />
-        <span className="font-medium text-base">Send</span>
+        <span className="font-semibold text-base">Send</span>
       </motion.button>
       <motion.button 
         variants={buttonVariants}
-        className="flex flex-col items-center justify-center pb-2 pt-3 px-4 bg-gray-50 rounded-xl hover:bg-gray-100 transition-colors"
+        className="flex flex-col items-center justify-center pb-2 pt-3 px-4 bg-zinc-50 dark:bg-zinc-900 rounded-xl hover:bg-zinc-100 dark:hover:bg-zinc-800 transition-colors dark:text-white"
       >
         <ArrowUpDown className="h-4 w-4 mb-1" />
-        <span className="font-medium text-base">Swap</span>
+        <span className="font-semibold text-base">Swap</span>
       </motion.button>
     </motion.div>
   )

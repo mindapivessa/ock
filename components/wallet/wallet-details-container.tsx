@@ -55,24 +55,24 @@ export function WalletDetailsContainer({ onClose, isVisible }: WalletDetailsCont
           animate="visible"
           exit="hidden"
         >
-          <div className="absolute right-0 mt-2 w-[420px] z-50 p-4 bg-white rounded-xl shadow-lg border border-gray-200">
+          <div className="absolute right-0 mt-2 w-[420px] z-50 p-4 bg-white dark:bg-zinc-950 rounded-xl shadow-lg border border-zinc-200 dark:border-zinc-800">
             <div className="p-0">
               {/* Top Bar */}
               <motion.div variants={itemVariants} className="flex justify-between items-center mb-4">
                 <div className="flex gap-3">
-                  <button className="hover:bg-gray-100 p-2 rounded-full">
-                    <Clock className="h-4 w-4" />
+                  <button className="hover:bg-zinc-100 dark:hover:bg-zinc-800 p-2 rounded-full">
+                    <Clock className="h-4 w-4 dark:text-zinc-400" />
                   </button>
-                  <button className="hover:bg-gray-100 p-2 rounded-full">
-                    <QrCode className="h-4 w-4" />
+                  <button className="hover:bg-zinc-100 dark:hover:bg-zinc-800 p-2 rounded-full">
+                    <QrCode className="h-4 w-4 dark:text-zinc-400" />
                   </button>
                 </div>
                 <div className="flex gap-3">
-                  <button className="hover:bg-gray-100 p-2 rounded-full">
-                    <LogOut className="h-4 w-4" />
+                  <button className="hover:bg-zinc-100 dark:hover:bg-zinc-800 p-2 rounded-full">
+                    <LogOut className="h-4 w-4 dark:text-zinc-400" />
                   </button>
-                  <button className="hover:bg-gray-100 p-2 rounded-full" onClick={onClose}>
-                    <Maximize2 className="h-4 w-4" />
+                  <button className="hover:bg-zinc-100 dark:hover:bg-zinc-800 p-2 rounded-full" onClick={onClose}>
+                    <Maximize2 className="h-4 w-4 dark:text-zinc-400" />
                   </button>
                 </div>
               </motion.div>

@@ -10,7 +10,7 @@ export function TokenList() {
   return (
     <div className="space-y-2 mt-2">
       {tokens.map((token) => (
-        <div key={token.symbol} className="flex items-center justify-between p-2 hover:bg-gray-50 rounded-xl transition-colors">
+        <div key={token.symbol} className="flex items-center justify-between p-2 hover:bg-zinc-50 dark:hover:bg-zinc-800 rounded-xl transition-colors">
           <div className="flex items-center space-x-3">
             <Image
               src={token.icon}
@@ -20,11 +20,11 @@ export function TokenList() {
               className="rounded-full"
             />
             <div>
-              <p className="font-medium">{token.name}</p>
-              <p className="text-sm text-gray-500">{token.balance} {token.symbol}</p>
+              <p className="font-semibold dark:text-white">{token.name}</p>
+              <p className="text-sm text-zinc-500 dark:text-zinc-400">{token.balance} {token.symbol}</p>
             </div>
           </div>
-          <p className="font-medium">{token.value}</p>
+          <p className="font-semibold dark:text-white">{token.value}</p>
         </div>
       ))}
     </div>

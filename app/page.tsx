@@ -2,7 +2,9 @@
 
 import { Wallet } from "@/components/wallet/wallet"
 import { Intent } from "@/components/Intent"
+import { Onramp } from "@/components/onramp/onramp"
 import { motion } from "framer-motion"
+import { ThemeToggle } from "@/components/theme-toggle"
 
 const containerVariants = {
   hidden: { opacity: 0 },
@@ -48,52 +50,75 @@ const itemVariants = {
 
 export default function Home() {
   return (
-    <motion.main
-      initial="hidden"
-      animate="visible"
-      variants={containerVariants}
-      className="flex min-h-screen flex-col items-center p-24 max-w-4xl mx-auto space-y-16"
-    >
-      {/* Wallet */}
-      <motion.div variants={sectionVariants} className="w-full space-y-6">
-        <motion.div variants={itemVariants} className="space-y-2">
-          <motion.h1 variants={itemVariants} className="text-lg font-bold dark:text-white">
-            Wallet
-          </motion.h1>    
-          <motion.p variants={itemVariants} className="text-gray-600 dark:text-gray-400 leading-relaxed">
-             Connect to an application with their wallet, view wallet details, onramp, send funds, and swap tokens.
-          </motion.p>
+    <>
+      <ThemeToggle />
+      <motion.main
+        initial="hidden"
+        animate="visible"
+        variants={containerVariants}
+        className="flex min-h-screen flex-col items-center p-24 max-w-4xl mx-auto space-y-16"
+      >
+        {/* Wallet */}
+        <motion.div variants={sectionVariants} className="w-full space-y-6">
+          <motion.div variants={itemVariants} className="space-y-2">
+            <motion.h1 variants={itemVariants} className="text-lg font-bold dark:text-white">
+              Wallet
+            </motion.h1>    
+            <motion.p variants={itemVariants} className="text-zinc-600 dark:text-zinc-400 leading-relaxed">
+               Connect to an application with their wallet, view wallet details, onramp, send funds, and swap tokens.
+            </motion.p>
+          </motion.div>
+          <motion.div 
+            variants={itemVariants}
+            className="border border-zinc-200 dark:border-zinc-800 rounded-2xl p-12 bg-white dark:bg-[#0A0A0A] shadow-sm relative"
+          >
+            <div className="flex justify-center">
+              <Wallet />
+            </div>
+          </motion.div>
         </motion.div>
-        <motion.div 
-          variants={itemVariants}
-          className="border border-gray-200 dark:border-gray-800 rounded-2xl p-12 bg-white dark:bg-gray-900 shadow-sm relative"
-        >
-          <div className="flex justify-center">
-            <Wallet />
-          </div>
-        </motion.div>
-      </motion.div>
 
-      {/* Intent */}
-      <motion.div variants={sectionVariants} className="w-full space-y-6">
-        <motion.div variants={itemVariants} className="space-y-2">
-          <motion.h1 variants={itemVariants} className="text-lg font-bold dark:text-white">
-            Intent
-          </motion.h1>    
-          <motion.p variants={itemVariants} className="text-gray-600 dark:text-gray-400 leading-relaxed">
-            Perform a transaction using natural language and converts to transaction intents.
-          </motion.p>
+        {/* Onramp */}
+        <motion.div variants={sectionVariants} className="w-full space-y-6">
+          <motion.div variants={itemVariants} className="space-y-2">
+            <motion.h1 variants={itemVariants} className="text-lg font-bold dark:text-white">
+              Onramp
+            </motion.h1>    
+            <motion.p variants={itemVariants} className="text-zinc-600 dark:text-zinc-400 leading-relaxed">
+              Buy tokens with ETH, USDC, Apple Pay, Coinbase, or Debit Card.
+            </motion.p>
+          </motion.div>
+          <motion.div 
+            variants={itemVariants}
+            className="border border-zinc-200 dark:border-zinc-800 rounded-2xl p-12 bg-white dark:bg-[#0A0A0A] shadow-sm min-h-[180px]"
+          >
+            <div className="flex justify-center">
+              <Onramp />
+            </div>
+          </motion.div>
         </motion.div>
-        <motion.div 
-          variants={itemVariants}
-          className="border border-gray-200 dark:border-gray-800 rounded-2xl p-12 bg-white dark:bg-gray-900 shadow-sm"
-        >
-          <div className="flex justify-center">
-            <Intent />
-          </div>
+
+        {/* Intent */}
+        <motion.div variants={sectionVariants} className="w-full space-y-6">
+          <motion.div variants={itemVariants} className="space-y-2">
+            <motion.h1 variants={itemVariants} className="text-lg font-bold dark:text-white">
+              Intent
+            </motion.h1>    
+            <motion.p variants={itemVariants} className="text-zinc-600 dark:text-zinc-400 leading-relaxed">
+              Perform a transaction using natural language and converts to transaction intents.
+            </motion.p>
+          </motion.div>
+          <motion.div 
+            variants={itemVariants}
+            className="border border-zinc-200 dark:border-zinc-800 rounded-2xl p-12 bg-white dark:bg-[#0A0A0A] shadow-sm"
+          >
+            <div className="flex justify-center">
+              <Intent />
+            </div>
+          </motion.div>
         </motion.div>
-      </motion.div>
-    </motion.main>
+      </motion.main>
+    </>
   )
 }
 
