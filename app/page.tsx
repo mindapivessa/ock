@@ -1,6 +1,7 @@
 'use client'
 
 import { Wallet } from "@/components/wallet/wallet"
+import { Intent } from "@/components/Intent"
 import { motion } from "framer-motion"
 
 const containerVariants = {
@@ -88,7 +89,7 @@ export default function Home() {
           className="border border-gray-200 dark:border-gray-800 rounded-2xl p-12 bg-white dark:bg-gray-900 shadow-sm"
         >
           <div className="flex justify-center">
-            <Wallet />
+            <Intent />
           </div>
         </motion.div>
       </motion.div>
