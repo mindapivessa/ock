@@ -35,7 +35,7 @@ const buttonContentVariants = {
     opacity: 1,
     scale: 1,
     transition: {
-      duration: 0.1,
+      duration: 0.05,
       ease: [0.2, 0.0, 0.2, 0.4]
     }
   },
@@ -44,7 +44,7 @@ const buttonContentVariants = {
     scale: 0.9,
     transition: {
       duration: 0.1,
-      ease: [0.1, 0.0, 0.2, 0.4]
+      ease: [0.2, 0.0, 0.2, 0.4]
     }
   }
 }
@@ -127,7 +127,7 @@ export function Onramp() {
             type="number"
             value={amount}
             onChange={(e) => setAmount(e.target.value)}
-            className="w-full py-3 px-4 rounded-xl border border-zinc-200 dark:border-zinc-800 bg-white dark:bg-zinc-900 text-black dark:text-zinc-100 focus:outline-none focus:ring-2 focus:ring-zinc-900 dark:focus:ring-zinc-100 focus:border-transparent"
+            className="w-full py-3 px-4 rounded-xl border border-zinc-200 dark:border-zinc-800 bg-white dark:bg-zinc-950 text-black dark:text-zinc-100 focus:outline-none focus:ring-2 focus:ring-zinc-900 dark:focus:ring-zinc-100 focus:border-transparent"
             placeholder="0"
           />
           <div className="absolute right-3 top-1/2 -translate-y-1/2">
@@ -160,7 +160,7 @@ export function Onramp() {
                 <motion.div
                   key="close"
                   variants={buttonContentVariants}
-                  initial="initial"
+                  initial="exit"
                   animate="animate"
                   exit="exit"
                 >
@@ -197,7 +197,7 @@ export function Onramp() {
               absolute right-0 w-3/4
               ${isVisible ? 'pointer-events-auto' : 'pointer-events-none'}
             `}>
-              <div className="ml-auto w-[calc(75%+88px)] bg-white dark:bg-zinc-900 rounded-xl border border-zinc-200 dark:border-zinc-800 shadow-lg overflow-hidden">
+              <div className="ml-auto w-[calc(75%+88px)] bg-white dark:bg-zinc-950 rounded-xl border border-zinc-200 dark:border-zinc-800 shadow-lg overflow-hidden">
                 <div className="pt-4 px-4">
                   <h2 className="text-base font-semibold text-black dark:text-zinc-100">Buy with</h2>
                 </div>
