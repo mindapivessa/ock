@@ -73,7 +73,7 @@ export function Intent() {
                 transition={{
                   repeat: Infinity,
                   repeatType: "loop",
-                  duration: 1.5,
+                  duration: 1.2,
                   ease: "linear"
                 }}
               >

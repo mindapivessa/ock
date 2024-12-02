@@ -13,7 +13,7 @@ interface PaymentOptionProps {
     return (
       <button
         onClick={onClick}
-        className="w-full flex items-start gap-3 p-3 rounded-xl hover:bg-zinc-50 dark:hover:bg-zinc-900 hover:shadow-sm transition-colors"
+        className="w-full flex items-start gap-3 px-3 py-2 rounded-xl hover:bg-zinc-50 dark:hover:bg-zinc-900 hover:shadow-sm transition-colors"
       >
         <div className="flex items-center space-x-3">
         <div className="w-8 h-8 flex items-center justify-center">

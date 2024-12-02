@@ -43,7 +43,7 @@ const buttonContentVariants = {
     opacity: 0,
     scale: 0.9,
     transition: {
-      duration: 0.1,
+      duration: 0.05,
       ease: [0.2, 0.0, 0.2, 0.4]
     }
   }
@@ -61,7 +61,7 @@ export function Onramp() {
   const handleBuyClick = () => {
     if (isExpanded) {
       setIsVisible(false)
-      setTimeout(() => setIsExpanded(false), 300)
+      setIsExpanded(false)
     } else {
       setIsExpanded(true)
       setIsVisible(true)
@@ -75,8 +75,9 @@ export function Onramp() {
       setIsExpanded(false)
       setTimeout(() => {
         setIsLoading(false)
+        setAmount('')
       }, 3000) // Simulate loading duration
-    }, 300) // Match the animation duration
+    }, 100) // Match the animation duration
   }
 
   useEffect(() => {
@@ -127,7 +128,7 @@ export function Onramp() {
             type="number"
             value={amount}
             onChange={(e) => setAmount(e.target.value)}
-            className="w-full py-3 px-4 rounded-xl border border-zinc-200 dark:border-zinc-800 bg-white dark:bg-zinc-950 text-black dark:text-zinc-100 focus:outline-none focus:ring-2 focus:ring-zinc-900 dark:focus:ring-zinc-100 focus:border-transparent"
+            className="w-full py-3 px-4 rounded-xl border border-zinc-300 dark:border-zinc-700 bg-white dark:bg-zinc-950 text-black dark:text-white focus:outline-none focus:ring-2 focus:ring-zinc-200 dark:focus:ring-zinc-700 focus:border-transparent"
             placeholder="0"
           />
           <div className="absolute right-3 top-1/2 -translate-y-1/2">
@@ -154,7 +155,17 @@ export function Onramp() {
                   animate="animate"
                   exit="exit"
                 >
-                  <Spinner />
+                  <motion.div
+                    animate={{ rotate: 360 }}
+                    transition={{
+                      repeat: Infinity,
+                      repeatType: "loop",
+                      duration: 1.2,
+                      ease: "linear"
+                    }}
+                  >
+                    <Spinner className="h-4 w-4 [&>circle]:opacity-25 [&>circle]:stroke-white/20 dark:[&>circle]:stroke-black/20 [&>circle]:stroke-[0.5]" />
+                  </motion.div>
                 </motion.div>
               ) : isExpanded ? (
                 <motion.div
